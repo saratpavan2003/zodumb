@@ -1,0 +1,56 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --void: #0a0a0f;
+  --deep: #12121a;
+  --surface: #1a1a26;
+  --border: #2a2a3e;
+  --purple: #7c3aed;
+  --purple-glow: #9d5ff5;
+  --gold: #f0b429;
+  --gold-dim: #a07820;
+  --text: #e8e6f0;
+  --muted: #7a7890;
+  --danger: #ff4d6d;
+}
+
+html, body {
+  height: 100%;
+  background: var(--void);
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stars background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,0.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 40% 10%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 60%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 25%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 50%, rgba(255,255,255,0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 15% 75%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 90%, rgba(255,255,255,0.25) 0%, transparent 100%),
+    radial-gradient(2px 2px at 35% 55%, rgba(124,58,237,0.3) 0%, transparent 100%),
+    radial-gradient(2px 2px at 75% 70%, rgba(240,180,41,0.2) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
