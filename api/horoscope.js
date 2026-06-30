@@ -49,7 +49,7 @@ Rules:
 - Make absurd "cosmic" connections to random things
 - Include a fake "lucky" something (number, food, enemy, color, etc.)
 - End with a ridiculous "prophecy" for their future
-- Keep it under 200 words
+- Keep it under 80 words. Short, punchy, no asterisks or markdown.
 - No disclaimers, no "remember this is just for fun" — just commit to the bit
 - Use dramatic cosmic language mixed with mundane modern life observations`;
 

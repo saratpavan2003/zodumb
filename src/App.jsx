@@ -159,7 +159,7 @@ const styles = {
     marginBottom: '0.75rem',
   },
   title: {
-    fontFamily: 'Playfair Display, serif',
+    fontFamily: 'Cormorant Garamond, serif',
     fontSize: 'clamp(3.5rem, 12vw, 6rem)',
     fontWeight: 900,
     fontStyle: 'italic',
@@ -257,7 +257,7 @@ const styles = {
     animation: 'pulse 1.5s ease-in-out infinite',
   },
   loadingText: {
-    fontFamily: 'Playfair Display, serif',
+    fontFamily: 'Cormorant Garamond, serif',
     fontStyle: 'italic',
     fontSize: '1.1rem',
     color: '#e8e6f0',
@@ -279,7 +279,7 @@ const styles = {
     gap: '0.75rem',
   },
   sign: {
-    fontFamily: 'Playfair Display, serif',
+    fontFamily: 'Cormorant Garamond, serif',
     fontSize: '1.3rem',
     fontWeight: 700,
     color: '#f0b429',
@@ -300,7 +300,7 @@ const styles = {
     background: 'linear-gradient(90deg, transparent, #2a2a3e, transparent)',
   },
   horoscope: {
-    fontFamily: 'Playfair Display, serif',
+    fontFamily: 'Cormorant Garamond, serif',
     fontSize: '1.05rem',
     fontStyle: 'italic',
     lineHeight: 1.85,
