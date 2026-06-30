@@ -24,7 +24,7 @@ export default async function handler(req) {
     return new Response(JSON.stringify({ error: 'Birthday is required' }), { status: 400 });
   }
 
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     return new Response(JSON.stringify({ error: 'API key not configured' }), { status: 500 });
   }
@@ -53,22 +53,20 @@ Rules:
 - No disclaimers, no "remember this is just for fun" — just commit to the bit
 - Use dramatic cosmic language mixed with mundane modern life observations`;
 
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-    },
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-6',
-      max_tokens: 400,
-      messages: [{ role: 'user', content: prompt }],
-    }),
-  });
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }],
+        generationConfig: { maxOutputTokens: 400 },
+      }),
+    }
+  );
 
   const data = await response.json();
-  const horoscope = data.content?.[0]?.text || 'The stars are currently buffering. Try again.';
+  const horoscope = data.candidates?.[0]?.content?.parts?.[0]?.text || 'The stars are currently buffering. Try again.';
 
   return new Response(JSON.stringify({ horoscope, vibe: randomVibe, sign: zodiacSign }), {
     status: 200,
