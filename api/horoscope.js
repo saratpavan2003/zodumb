@@ -66,6 +66,11 @@ Rules:
   );
 
   const data = await response.json();
+
+  if (!response.ok) {
+    return new Response(JSON.stringify({ error: data.error?.message || JSON.stringify(data) }), { status: 500 });
+  }
+
   const horoscope = data.candidates?.[0]?.content?.parts?.[0]?.text || 'The stars are currently buffering. Try again.';
 
   return new Response(JSON.stringify({ horoscope, vibe: randomVibe, sign: zodiacSign }), {
