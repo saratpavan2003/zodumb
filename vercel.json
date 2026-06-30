@@ -7,8 +7,5 @@
       "memory": 128,
       "maxDuration": 30
     }
-  },
-  "analytics": {
-    "enabled": true
   }
 }
