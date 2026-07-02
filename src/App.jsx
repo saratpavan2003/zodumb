@@ -5,6 +5,10 @@ const RELATIONSHIPS = [
   { id: 'crushing', emoji: '💘', label: 'Crushing' },
   { id: 'dating', emoji: '💕', label: 'Dating' },
   { id: 'friends', emoji: '🧑‍🤝‍🧑', label: 'Friends' },
+  { id: 'siblings', emoji: '👯', label: 'Siblings' },
+  { id: 'roommates', emoji: '🏠', label: 'Roommates' },
+  { id: 'coworkers', emoji: '💼', label: 'Coworkers' },
+  { id: 'exes', emoji: '💔', label: 'Exes' },
   { id: 'enemies', emoji: '😤', label: 'Enemies' },
 ]
 

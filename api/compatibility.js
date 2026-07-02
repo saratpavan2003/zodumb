@@ -16,6 +16,22 @@ const RELATIONSHIPS = {
     label: 'friends',
     tone: 'best-friend chaos. Roast the codependency and shared bad decisions.',
   },
+  siblings: {
+    label: 'siblings',
+    tone: 'sibling rivalry chaos. Roast the lifelong competition, shared trauma, and who Mom loves more.',
+  },
+  roommates: {
+    label: 'roommates',
+    tone: 'roommate warfare. Roast the unwashed dishes, unpaid rent, and passive-aggressive fridge notes.',
+  },
+  coworkers: {
+    label: 'coworkers',
+    tone: 'office dynamic. Roast the forced proximity, Slack energy, and suspicious "quick syncs".',
+  },
+  exes: {
+    label: 'exes',
+    tone: 'post-breakup cosmic tension. Roast the history, the lingering drama, and the 2am "u up?" risk.',
+  },
   enemies: {
     label: 'sworn enemies',
     tone: 'petty cosmic warfare. Roast the beef with maximum drama.',
