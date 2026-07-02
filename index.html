@@ -6,9 +6,9 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- Primary SEO -->
-    <title>Zodumb — Funny Birthday Horoscope Generator</title>
-    <meta name="description" content="Enter your birthday and get a hilariously unhinged horoscope. Free, instant, and absolutely chaotic. No sign-up needed." />
-    <meta name="keywords" content="funny horoscope, birthday horoscope, horoscope generator, funny astrology, unhinged horoscope, comedy zodiac" />
+    <title>Zodumb — Funny Birthday Horoscope & Zodiac Compatibility Generator</title>
+    <meta name="description" content="Enter your birthday for a hilariously unhinged AI horoscope, or drop two birthdays into Cosmic Beef for a savage zodiac compatibility score. Free, instant, no sign-up." />
+    <meta name="keywords" content="funny horoscope, birthday horoscope, horoscope generator, funny astrology, unhinged horoscope, comedy zodiac, zodiac compatibility, compatibility calculator, cosmic beef" />
     <link rel="canonical" href="https://zodumb.com" />
 
     <!-- Open Graph (WhatsApp, Facebook, iMessage previews) -->
@@ -35,7 +35,7 @@
       "@type": "WebApplication",
       "name": "Zodumb",
       "url": "https://zodumb.com",
-      "description": "A funny AI-powered birthday horoscope generator. Enter your birthday and get a hilariously unhinged cosmic reading.",
+      "description": "A funny AI-powered birthday horoscope and zodiac compatibility generator. Enter your birthday for an unhinged cosmic reading, or two birthdays for a Cosmic Beef compatibility score.",
       "applicationCategory": "EntertainmentApplication",
       "operatingSystem": "All",
       "offers": {
@@ -46,13 +46,126 @@
     }
     </script>
 
+    <!-- FAQ structured data (Google rich results) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Zodumb?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zodumb is a free, AI-powered funny horoscope generator. Enter your birthday and it writes a hilariously unhinged cosmic reading based on your zodiac sign. There is a Cosmic Beef mode too, where you enter two birthdays to get a comedic zodiac compatibility score."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Zodumb real astrology?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Zodumb is pure comedy. The horoscopes, compatibility percentages, and red and green flags are all made up by AI for entertainment. Accuracy is not guaranteed. Chaos is."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the Cosmic Beef compatibility score work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter two birthdays and pick a relationship type such as dating, crushing, friends, siblings, roommates, coworkers, exes, or enemies. Zodumb reads both zodiac signs and returns a funny compatibility percentage, a red-flag and green-flag count, and a ridiculous verdict."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Zodumb free and do I need an account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zodumb is completely free and needs no sign-up or account. Just enter a birthday and get your reading instantly, then download a share card to post it."
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700;1,600&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+      /* Static, crawlable SEO content shown below the app */
+      .seo-content {
+        position: relative;
+        z-index: 1;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 5rem;
+        font-family: 'Space Grotesk', sans-serif;
+        color: #7a7890;
+        line-height: 1.8;
+      }
+      .seo-content h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-weight: 700;
+        font-size: 1.9rem;
+        color: #f0b429;
+        margin: 2.5rem 0 0.75rem;
+      }
+      .seo-content h3 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 500;
+        font-size: 1.05rem;
+        color: #e8e6f0;
+        margin: 1.5rem 0 0.35rem;
+      }
+      .seo-content p { margin-bottom: 0.9rem; }
+      .seo-content ol { margin: 0 0 0.9rem 1.25rem; }
+      .seo-content li { margin-bottom: 0.4rem; }
+      .seo-content strong { color: #9d5ff5; font-weight: 500; }
+      .seo-content .seo-divider {
+        height: 1px;
+        max-width: 720px;
+        margin: 1rem auto 0;
+        background: linear-gradient(90deg, transparent, #2a2a3e, transparent);
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+
+    <div class="seo-divider"></div>
+    <article class="seo-content">
+      <h2>What is Zodumb?</h2>
+      <p><strong>Zodumb</strong> is a free, AI-powered <strong>funny horoscope generator</strong>. Enter your birthday and get a hilariously unhinged cosmic reading based on your zodiac sign — part roast, part fortune cookie, zero accuracy. No sign-up, no account, just instant chaos you can share.</p>
+
+      <h2>Cosmic Beef — zodiac compatibility, roasted</h2>
+      <p>Switch to <strong>Cosmic Beef</strong> to check the <strong>zodiac compatibility</strong> between two people. Drop in two birthdays, choose how you know each other — dating, crushing, friends, siblings, roommates, coworkers, exes, or sworn enemies — and Zodumb returns an absurd compatibility percentage, a red-flag and green-flag count, and a ridiculous cosmic verdict. It is the pettiest compatibility calculator on the internet.</p>
+
+      <h2>How it works</h2>
+      <ol>
+        <li>Pick <strong>Solo Reading</strong> for one birthday, or <strong>Cosmic Beef</strong> for two.</li>
+        <li>Enter the date(s) of birth and, for compatibility, the relationship type.</li>
+        <li>Get an instant AI horoscope or compatibility score.</li>
+        <li>Download a share card and post your fate.</li>
+      </ol>
+
+      <h2>Frequently asked questions</h2>
+
+      <h3>Is Zodumb real astrology?</h3>
+      <p>No. Zodumb is pure comedy. The horoscopes, compatibility percentages, and flags are all invented by AI for entertainment. Accuracy is not guaranteed — chaos is.</p>
+
+      <h3>How does the compatibility score work?</h3>
+      <p>Zodumb reads both zodiac signs and the relationship type you picked, then makes up a funny compatibility percentage and verdict. It is a punchline, not a measurement.</p>
+
+      <h3>Is Zodumb free? Do I need an account?</h3>
+      <p>It is completely free and needs no sign-up. Enter a birthday and get your reading instantly.</p>
+
+      <h3>Can I share my horoscope?</h3>
+      <p>Yes. Every reading can be turned into a downloadable share card for Instagram, WhatsApp, or your group chat.</p>
+    </article>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
