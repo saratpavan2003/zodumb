@@ -6,6 +6,13 @@
     "api/horoscope.js": {
       "memory": 128,
       "maxDuration": 30
+    },
+    "api/sicknote.js": {
+      "memory": 128,
+      "maxDuration": 30
     }
-  }
+  },
+  "rewrites": [
+    { "source": "/sick", "destination": "/sick.html" }
+  ]
 }

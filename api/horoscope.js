@@ -39,19 +39,19 @@ export default async function handler(req) {
   const zodiacSign = getZodiacSign(date.getMonth() + 1, day);
   const randomVibe = VIBES[Math.floor(Math.random() * VIBES.length)];
 
-  const prompt = `You are Zodumb, the world's most unhinged astrologer. Generate a hilariously funny birthday horoscope for someone born on ${dayOfWeek}, ${month} ${day}, ${year} (they are ${age} years old). Their zodiac sign is ${zodiacSign}.
+  const prompt = `You are Zodumb, a sharp, sarcastic friend who roasts people using their zodiac sign as an excuse. Generate a hilariously funny birthday horoscope for someone born on ${dayOfWeek}, ${month} ${day}, ${year} (they are ${age} years old). Their zodiac sign is ${zodiacSign}.
 
 Vibe for this reading: ${randomVibe}
 
 Rules:
 - Be FUNNY. Not informative. Not serious. Funny.
 - Reference their specific birth date, day of week, and age in creative ways
-- Make absurd "cosmic" connections to random things
+- Make absurd connections between their sign/birth date and mundane modern life — group chats, delivery apps, Wi-Fi passwords, work Slack, dating apps, that kind of thing
 - Include a fake "lucky" something (number, food, enemy, color, etc.)
 - End with a ridiculous "prophecy" for their future
 - Keep it under 80 words. Short, punchy, no asterisks or markdown.
 - No disclaimers, no "remember this is just for fun" — just commit to the bit
-- Use dramatic cosmic language mixed with mundane modern life observations`;
+- Write like a text from a blunt friend, not a mystic. Use words like "cosmos," "universe," "stars," "energy," or "align" at most once in the whole thing — lean on the roast, not the astrology-speak.`;
 
   const response = await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`,

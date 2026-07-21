@@ -2,6 +2,8 @@
 
 Enter your birthday. Receive your fate. Accuracy not guaranteed. Chaos is.
 
+Three modes: **Solo Reading** (a birthday horoscope), **Cosmic Beef** (zodiac compatibility for two people), and **Call In Sick** (an AI-crafted excuse, at `/sick`).
+
 ---
 
 ## 🚀 Deploy to Vercel (Free)
@@ -25,8 +27,8 @@ git push -u origin main
 ### Step 3 — Add your API Key (SECRET)
 1. In Vercel dashboard → your project → **Settings → Environment Variables**
 2. Add:
-   - Name: `ANTHROPIC_API_KEY`
-   - Value: `sk-ant-...` (your Anthropic API key)
+   - Name: `GEMINI_API_KEY`
+   - Value: your [Google AI Studio](https://aistudio.google.com/apikey) Gemini API key
 3. Click **Save** then **Redeploy**
 
 ### Step 4 — Connect your custom domain
@@ -47,7 +49,7 @@ npm install
 
 Create a `.env.local` file:
 ```
-ANTHROPIC_API_KEY=sk-ant-your-key-here
+GEMINI_API_KEY=your-gemini-key-here
 ```
 
 Run dev server:
@@ -55,7 +57,7 @@ Run dev server:
 npm run dev
 ```
 
-> Note: Vercel Edge Functions run locally via `vercel dev` if you have the Vercel CLI installed.
+> Note: `npm run dev` (Vite) serves the frontend only — the `/api/*` Edge Functions don't run under it. Use `vercel dev` instead (requires the Vercel CLI) to run the frontend and API functions together locally.
 
 ---
 
@@ -64,11 +66,17 @@ npm run dev
 ```
 zodumb/
 ├── api/
-│   └── horoscope.js      # Serverless function (API key lives here, secret)
+│   ├── horoscope.js       # Solo Reading — Gemini-backed serverless function
+│   ├── compatibility.js   # Cosmic Beef — zodiac compatibility
+│   └── sicknote.js        # Call In Sick — excuse generator
 ├── src/
-│   ├── App.jsx            # Main React component
-│   ├── main.jsx           # Entry point
-│   └── index.css          # Global styles
+│   ├── App.jsx             # Main page — Solo Reading + Cosmic Beef
+│   ├── SickApp.jsx         # /sick page — Call In Sick generator
+│   ├── main.jsx            # Entry point (routes "/" vs "/sick")
+│   ├── styles.js           # Shared design tokens for both pages
+│   ├── Actions.jsx         # Shared copy / download / reset buttons
+│   ├── shareCard.js        # Canvas-based downloadable share cards
+│   └── index.css           # Global styles
 ├── index.html
 ├── vite.config.js
 ├── vercel.json
@@ -77,4 +85,4 @@ zodumb/
 
 ---
 
-Built with React + Vite + Vercel Edge Functions + Claude AI
+Built with React + Vite + Vercel Edge Functions + Gemini AI

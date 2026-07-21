@@ -30,11 +30,11 @@ const RELATIONSHIPS = {
   },
   exes: {
     label: 'exes',
-    tone: 'post-breakup cosmic tension. Roast the history, the lingering drama, and the 2am "u up?" risk.',
+    tone: 'post-breakup tension. Roast the history, the lingering drama, and the 2am "u up?" risk.',
   },
   enemies: {
     label: 'sworn enemies',
-    tone: 'petty cosmic warfare. Roast the beef with maximum drama.',
+    tone: 'petty warfare. Roast the beef with maximum drama.',
   },
 };
 
@@ -61,7 +61,7 @@ export default async function handler(req) {
   const sign1 = getZodiacSign(d1.getMonth() + 1, d1.getDate());
   const sign2 = getZodiacSign(d2.getMonth() + 1, d2.getDate());
 
-  const prompt = `You are Zodumb, the world's most unhinged astrologer. Two people are here for a COSMIC COMPATIBILITY reading.
+  const prompt = `You are Zodumb, a sharp, sarcastic friend who roasts people using their zodiac signs as an excuse. Two people are here for a COMPATIBILITY reading.
 
 Person A: born ${d1.toLocaleString('default', { month: 'long' })} ${d1.getDate()}, sign ${sign1}.
 Person B: born ${d2.toLocaleString('default', { month: 'long' })} ${d2.getDate()}, sign ${sign2}.
@@ -72,7 +72,7 @@ Return ONLY valid JSON matching this shape:
 {
   "score": <integer 0-100, an absurdly specific compatibility percentage>,
   "scoreLabel": "<a short punchy verdict on that number, max 6 words>",
-  "reading": "<the funny cosmic roast of this pairing, 2-3 sentences, under 65 words, no markdown/asterisks>",
+  "reading": "<the funny roast of this pairing, 2-3 sentences, under 65 words, no markdown/asterisks>",
   "redFlags": <integer 0-5>,
   "greenFlags": <integer 0-5>,
   "verdict": "<one ridiculous final ruling, max 10 words>"
@@ -81,7 +81,8 @@ Return ONLY valid JSON matching this shape:
 Rules:
 - Be FUNNY, not informative. Commit to the bit. No disclaimers.
 - Reference both zodiac signs in creative, absurd ways.
-- Make wild "cosmic" connections to mundane modern life.
+- Make absurd connections between their signs and mundane modern life — group chats, delivery apps, shared Netflix logins, texting habits, that kind of thing.
+- Write like a blunt friend giving the tea, not a mystic. Use words like "cosmos," "universe," "stars," "energy," or "align" at most once in the whole reading — lean on the roast, not the astrology-speak.
 - The score should feel oddly precise (e.g. 73, 12, 91), not a round guess.`;
 
   const response = await fetch(
@@ -111,14 +112,14 @@ Rules:
   try {
     parsed = JSON.parse(raw);
   } catch {
-    // Fallback if the stars refuse to return clean JSON.
+    // Fallback if the model refuses to return clean JSON.
     parsed = {
       score: 50,
-      scoreLabel: 'The cosmos are buffering',
-      reading: 'The stars looked at you two and short-circuited. Try again.',
+      scoreLabel: 'Buffering, try again',
+      reading: 'Something short-circuited trying to read you two. Try again.',
       redFlags: 2,
       greenFlags: 2,
-      verdict: 'Inconclusive. Mercury is in the microwave.',
+      verdict: 'Inconclusive. Try that again.',
     };
   }
 
@@ -127,11 +128,11 @@ Rules:
     sign2,
     relationship: rel.label,
     score: clampInt(parsed.score, 0, 100, 50),
-    scoreLabel: String(parsed.scoreLabel || '').slice(0, 60) || 'The stars are unsure',
-    reading: String(parsed.reading || 'The cosmos are speechless.'),
+    scoreLabel: String(parsed.scoreLabel || '').slice(0, 60) || 'Results inconclusive',
+    reading: String(parsed.reading || 'Speechless. Try again.'),
     redFlags: clampInt(parsed.redFlags, 0, 5, 0),
     greenFlags: clampInt(parsed.greenFlags, 0, 5, 0),
-    verdict: String(parsed.verdict || '').slice(0, 120) || 'Proceed at your own cosmic risk.',
+    verdict: String(parsed.verdict || '').slice(0, 120) || 'Proceed at your own risk.',
   };
 
   return new Response(JSON.stringify(result), {

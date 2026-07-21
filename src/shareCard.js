@@ -214,7 +214,48 @@ function renderBeef(ctx, beef) {
   drawWrapped(ctx, `“${beef.verdict}”`, W / 2, afterReading + 60, W - PAD * 2, 64)
 }
 
-export async function generateShareImage({ mode, result, beef }) {
+function renderSick(ctx, sick) {
+  ctx.textAlign = 'center'
+
+  // Ailment name
+  ctx.fillStyle = COLORS.gold
+  ctx.font = `700 italic 60px ${SERIF}`
+  drawWrapped(ctx, sick.ailment, W / 2, 600, W - PAD * 2, 72)
+
+  // Big believability score
+  const grad = ctx.createLinearGradient(W * 0.3, 0, W * 0.7, 0)
+  grad.addColorStop(0, COLORS.gold)
+  grad.addColorStop(1, COLORS.purpleGlow)
+  ctx.fillStyle = grad
+  ctx.font = `900 italic 210px ${SERIF}`
+  ctx.fillText(`${sick.believability}%`, W / 2, 840)
+
+  ctx.fillStyle = COLORS.purpleGlow
+  ctx.font = `500 30px ${SANS}`
+  ctx.fillText('BELIEVABLE', W / 2, 895)
+
+  ctx.fillStyle = COLORS.text
+  ctx.font = `700 italic 44px ${SERIF}`
+  ctx.fillText(sick.believabilityLabel, W / 2, 965)
+
+  drawDivider(ctx, 1050)
+
+  // The message, in a card-ish block
+  ctx.fillStyle = COLORS.text
+  ctx.font = `500 40px ${SANS}`
+  ctx.textAlign = 'left'
+  const afterMsg = drawWrapped(ctx, sick.message, PAD, 1160, W - PAD * 2, 62)
+
+  // Backup line
+  if (sick.backup) {
+    ctx.fillStyle = COLORS.muted
+    ctx.font = `700 italic 40px ${SERIF}`
+    drawWrapped(ctx, `“${sick.backup}”`, PAD, afterMsg + 70, W - PAD * 2, 56)
+  }
+  ctx.textAlign = 'center'
+}
+
+export async function generateShareImage({ mode, result, beef, sick }) {
   await ensureFonts()
 
   const canvas = document.createElement('canvas')
@@ -227,6 +268,7 @@ export async function generateShareImage({ mode, result, beef }) {
   drawHeader(ctx)
 
   if (mode === 'beef' && beef) renderBeef(ctx, beef)
+  else if (mode === 'sick' && sick) renderSick(ctx, sick)
   else if (mode === 'solo' && result) renderSolo(ctx, result)
 
   drawFooter(ctx)
@@ -234,20 +276,28 @@ export async function generateShareImage({ mode, result, beef }) {
 }
 
 // Share the card via the native share sheet where possible, else download it.
-export async function shareOrDownloadCard({ mode, result, beef }) {
-  const canvas = await generateShareImage({ mode, result, beef })
+export async function shareOrDownloadCard({ mode, result, beef, sick }) {
+  const canvas = await generateShareImage({ mode, result, beef, sick })
   const blob = await new Promise(res => canvas.toBlob(res, 'image/png'))
   if (!blob) throw new Error('Could not render image')
 
-  const filename = mode === 'beef' ? 'zodumb-cosmic-beef.png' : 'zodumb-horoscope.png'
+  const filename =
+    mode === 'beef' ? 'zodumb-cosmic-beef.png'
+    : mode === 'sick' ? 'zodumb-sick-note.png'
+    : 'zodumb-horoscope.png'
   const file = new File([blob], filename, { type: 'image/png' })
+
+  const shareText =
+    mode === 'beef' ? 'Our cosmic compatibility 💘'
+    : mode === 'sick' ? 'My cosmically-approved sick note 🤒'
+    : 'My unhinged horoscope ✦'
 
   if (navigator.canShare && navigator.canShare({ files: [file] })) {
     try {
       await navigator.share({
         files: [file],
         title: 'Zodumb',
-        text: mode === 'beef' ? 'Our cosmic compatibility 💘' : 'My unhinged horoscope ✦',
+        text: shareText,
       })
       return 'shared'
     } catch (err) {
