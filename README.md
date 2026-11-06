@@ -2,7 +2,7 @@
 
 Enter your birthday. Receive your fate. Accuracy not guaranteed. Chaos is.
 
-Three modes: **Solo Reading** (a birthday horoscope), **Cosmic Beef** (zodiac compatibility for two people), and **Call In Sick** (an AI-crafted excuse, at `/sick`).
+Four modes: **Solo Reading** (a birthday horoscope), **Cosmic Beef** (zodiac compatibility for two people), **Call In Sick** (an AI-crafted excuse, at `/sick`), and **Why I Can't Lend You Money** (gentle-to-absurd ways to say no to a loan, at `/money`).
 
 ---
 

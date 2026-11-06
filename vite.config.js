@@ -2,15 +2,16 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 
-// Serves /sick as /sick.html in dev, matching the /sick -> /sick.html
-// rewrite configured in vercel.json for production.
+// Serves /sick and /money as their .html pages in dev, matching the
+// rewrites configured in vercel.json for production.
 function sickRoute() {
   return {
     name: 'sick-route',
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
-        if (req.url === '/sick' || req.url === '/sick/') {
-          req.url = '/sick.html'
+        const path = (req.url || '').split('?')[0].replace(/\/$/, '')
+        if (path === '/sick' || path === '/money') {
+          req.url = `${path}.html`
         }
         next()
       })
@@ -25,6 +26,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         sick: resolve(__dirname, 'sick.html'),
+        money: resolve(__dirname, 'money.html'),
       },
     },
   },

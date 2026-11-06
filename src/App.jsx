@@ -293,6 +293,9 @@ export default function App() {
         <a href="/sick" style={styles.ctaLink}>
           🤒 Try our Call In Sick Generator →
         </a>
+        <a href="/money" style={styles.ctaLink}>
+          💸 Someone wants a loan? Say no with style →
+        </a>
 
         {/* Footer */}
         <footer style={styles.footer}>

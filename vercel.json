@@ -10,9 +10,14 @@
     "api/sicknote.js": {
       "memory": 128,
       "maxDuration": 30
+    },
+    "api/nomoney.js": {
+      "memory": 128,
+      "maxDuration": 30
     }
   },
   "rewrites": [
-    { "source": "/sick", "destination": "/sick.html" }
+    { "source": "/sick", "destination": "/sick.html" },
+    { "source": "/money", "destination": "/money.html" }
   ]
 }

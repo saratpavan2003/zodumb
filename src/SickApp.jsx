@@ -224,7 +224,10 @@ export default function SickApp() {
           )}
         </main>
 
-        {/* Back link */}
+        {/* Links */}
+        <a href="/money" style={styles.ctaLink}>
+          💸 Someone wants a loan? Try Why I Can't Lend You Money →
+        </a>
         <a href="/" style={styles.ctaLink}>
           ✦ Back to Zodumb Horoscopes
         </a>
