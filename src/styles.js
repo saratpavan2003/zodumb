@@ -44,6 +44,15 @@ export const baseStyles = {
     marginBottom: '1rem',
     letterSpacing: '-0.02em',
   },
+  pageH1: {
+    fontFamily: 'Space Grotesk, sans-serif',
+    fontSize: '1.05rem',
+    fontWeight: 500,
+    color: '#e8e6f0',
+    letterSpacing: '0.01em',
+    lineHeight: 1.4,
+    margin: '0 0 0.5rem',
+  },
   subtitle: {
     fontFamily: 'Space Grotesk, sans-serif',
     fontSize: '0.95rem',

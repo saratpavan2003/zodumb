@@ -101,7 +101,8 @@ export default function MoneyApp() {
         {/* Header */}
         <header style={styles.header}>
           <div style={styles.eyebrow}>THE COSMOS SAY YOUR WALLET IS CLOSED</div>
-          <h1 style={styles.title}>ZODUMB</h1>
+          <div style={styles.title}>ZODUMB</div>
+          <h1 style={styles.pageH1}>How to Say No to Lending Money</h1>
           <p style={styles.subtitle}>Someone wants a loan. You want to say no.<br />From gentle to absurd. Friendship not guaranteed.</p>
         </header>
 
@@ -248,6 +249,9 @@ export default function MoneyApp() {
         {/* Links */}
         <a href="/sick" style={styles.ctaLink}>
           🤒 Need a day off? Try the Call In Sick Generator →
+        </a>
+        <a href="/late" style={styles.ctaLink}>
+          ⏰ Running late? Try the Late to Work Excuse Generator →
         </a>
         <a href="/" style={styles.ctaLink}>
           ✦ Back to Zodumb Horoscopes

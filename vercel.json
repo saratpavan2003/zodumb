@@ -14,10 +14,15 @@
     "api/nomoney.js": {
       "memory": 128,
       "maxDuration": 30
+    },
+    "api/late.js": {
+      "memory": 128,
+      "maxDuration": 30
     }
   },
   "rewrites": [
     { "source": "/sick", "destination": "/sick.html" },
-    { "source": "/money", "destination": "/money.html" }
+    { "source": "/money", "destination": "/money.html" },
+    { "source": "/late", "destination": "/late.html" }
   ]
 }

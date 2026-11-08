@@ -128,7 +128,8 @@ export default function App() {
         {/* Header */}
         <header style={styles.header}>
           <div style={styles.eyebrow}>THE COSMOS ARE JUDGING YOU</div>
-          <h1 style={styles.title}>ZODUMB</h1>
+          <div style={styles.title}>ZODUMB</div>
+          <h1 style={styles.pageH1}>Funny Birthday Horoscope &amp; Zodiac Compatibility Generator</h1>
           <p style={styles.subtitle}>Enter your birthday. Receive your fate.<br />Accuracy not guaranteed. Chaos is.</p>
         </header>
 
@@ -292,6 +293,9 @@ export default function App() {
         {/* Cross-promo CTA */}
         <a href="/sick" style={styles.ctaLink}>
           🤒 Try our Call In Sick Generator →
+        </a>
+        <a href="/late" style={styles.ctaLink}>
+          ⏰ Running late? Try the Late to Work Excuse Generator →
         </a>
         <a href="/money" style={styles.ctaLink}>
           💸 Someone wants a loan? Say no with style →

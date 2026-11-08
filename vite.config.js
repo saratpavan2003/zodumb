@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 
-// Serves /sick and /money as their .html pages in dev, matching the
+// Serves /sick, /money and /late as their .html pages in dev, matching the
 // rewrites configured in vercel.json for production.
 function sickRoute() {
   return {
@@ -10,7 +10,7 @@ function sickRoute() {
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         const path = (req.url || '').split('?')[0].replace(/\/$/, '')
-        if (path === '/sick' || path === '/money') {
+        if (['/sick', '/money', '/late'].includes(path)) {
           req.url = `${path}.html`
         }
         next()
@@ -27,6 +27,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         sick: resolve(__dirname, 'sick.html'),
         money: resolve(__dirname, 'money.html'),
+        late: resolve(__dirname, 'late.html'),
       },
     },
   },

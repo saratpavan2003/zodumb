@@ -97,7 +97,8 @@ export default function SickApp() {
         {/* Header */}
         <header style={styles.header}>
           <div style={styles.eyebrow}>THE COSMOS ARE COVERING FOR YOU</div>
-          <h1 style={styles.title}>ZODUMB</h1>
+          <div style={styles.title}>ZODUMB</div>
+          <h1 style={styles.pageH1}>Call In Sick Excuse Generator</h1>
           <p style={styles.subtitle}>Pick your excuse. Send with confidence.<br />Believability not guaranteed. Chaos is.</p>
         </header>
 
@@ -225,6 +226,9 @@ export default function SickApp() {
         </main>
 
         {/* Links */}
+        <a href="/late" style={styles.ctaLink}>
+          ⏰ Just running late? Try the Late to Work Excuse Generator →
+        </a>
         <a href="/money" style={styles.ctaLink}>
           💸 Someone wants a loan? Try Why I Can't Lend You Money →
         </a>
