@@ -81,7 +81,7 @@ Return ONLY valid JSON matching this shape:
 Rules:
 - Be FUNNY, not informative. Commit to the bit. No disclaimers.
 - Reference both zodiac signs in creative, absurd ways.
-- Make absurd connections between their signs and mundane modern life — group chats, delivery apps, shared Netflix logins, texting habits, that kind of thing.
+- Make absurd connections between their signs and everyday life. Pick your own topic at random each time; don't fall back on the obvious ones.
 - Write like a blunt friend giving the tea, not a mystic. Use words like "cosmos," "universe," "stars," "energy," or "align" at most once in the whole reading — lean on the roast, not the astrology-speak.
 - The score should feel oddly precise (e.g. 73, 12, 91), not a round guess.`;
 

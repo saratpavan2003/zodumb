@@ -46,7 +46,7 @@ Vibe for this reading: ${randomVibe}
 Rules:
 - Be FUNNY. Not informative. Not serious. Funny.
 - Reference their specific birth date, day of week, and age in creative ways
-- Make absurd connections between their sign/birth date and mundane modern life — group chats, delivery apps, Wi-Fi passwords, work Slack, dating apps, that kind of thing
+- Make absurd connections between their sign/birth date and everyday life. Pick your own topic at random each time; don't fall back on the obvious ones.
 - Include a fake "lucky" something (number, food, enemy, color, etc.)
 - End with a ridiculous "prophecy" for their future
 - Keep it under 80 words. Short, punchy, no asterisks or markdown.
