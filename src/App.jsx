@@ -127,10 +127,10 @@ export default function App() {
 
         {/* Header */}
         <header style={styles.header}>
-          <div style={styles.eyebrow}>THE COSMOS ARE JUDGING YOU</div>
+          <div style={styles.eyebrow}>YOUR BIRTHDAY, ROASTED</div>
           <div style={styles.title}>ZODUMB</div>
           <h1 style={styles.pageH1}>Funny Birthday Horoscope &amp; Zodiac Compatibility Generator</h1>
-          <p style={styles.subtitle}>Enter your birthday. Receive your fate.<br />Accuracy not guaranteed. Chaos is.</p>
+          <p style={styles.subtitle}>Enter your birthday. Get a funny horoscope.<br />For entertainment only.</p>
         </header>
 
         {/* Mode toggle */}
@@ -172,7 +172,7 @@ export default function App() {
                 disabled={!birthday}
                 style={{ ...styles.button, ...(!birthday ? styles.buttonDisabled : {}) }}
               >
-                Consult the Stars →
+                Get My Horoscope →
               </button>
               {error && <p style={styles.error}>⚠ {error}</p>}
             </div>
@@ -228,7 +228,7 @@ export default function App() {
                 disabled={!birthday1 || !birthday2}
                 style={{ ...styles.button, ...(!birthday1 || !birthday2 ? styles.buttonDisabled : {}) }}
               >
-                Read the Cosmic Beef →
+                Check Our Compatibility →
               </button>
               {error && <p style={styles.error}>⚠ {error}</p>}
             </div>
@@ -238,9 +238,9 @@ export default function App() {
           {loading && (
             <div style={styles.loading}>
               <div style={styles.orb} />
-              <p style={styles.loadingText}>The cosmos are deliberating…</p>
+              <p style={styles.loadingText}>Reading your signs…</p>
               <p style={styles.loadingSubtext}>
-                {mode === 'beef' ? 'Cross-referencing your incompatibilities.' : 'This may involve arguing with Mercury.'}
+                {mode === 'beef' ? 'Cross-referencing your incompatibilities.' : 'Looking up your sign.'}
               </p>
             </div>
           )}
@@ -303,7 +303,7 @@ export default function App() {
 
         {/* Footer */}
         <footer style={styles.footer}>
-          <p>Made with questionable cosmic energy · No stars were harmed</p>
+          <p>Made by Zodumb · For entertainment only</p>
         </footer>
 
       </div>

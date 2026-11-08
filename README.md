@@ -1,6 +1,6 @@
-# 🔮 Zodumb — Your Unhinged Birthday Horoscope
+# 🔮 Zodumb — Your Funny Birthday Horoscope
 
-Enter your birthday. Receive your fate. Accuracy not guaranteed. Chaos is.
+Enter your birthday. Get a funny horoscope. For entertainment only.
 
 Five modes: **Solo Reading** (a birthday horoscope), **Cosmic Beef** (zodiac compatibility for two people), **Call In Sick** (an AI-crafted excuse, at `/sick`), **Why I Can't Lend You Money** (gentle-to-absurd ways to say no to a loan, at `/money`), and **Late to Work Excuse** (an AI-written "running late" message, at `/late`).
 

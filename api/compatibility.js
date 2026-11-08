@@ -2,7 +2,7 @@ export const config = {
   runtime: 'edge',
 };
 
-// Relationship flavors — each nudges the cosmic tone in a different direction.
+// Relationship flavors — each nudges the tone in a different direction.
 const RELATIONSHIPS = {
   crushing: {
     label: 'a hopeless crush',
@@ -14,11 +14,11 @@ const RELATIONSHIPS = {
   },
   friends: {
     label: 'friends',
-    tone: 'best-friend chaos. Roast the codependency and shared bad decisions.',
+    tone: 'best friends. Roast the codependency and shared bad decisions.',
   },
   siblings: {
     label: 'siblings',
-    tone: 'sibling rivalry chaos. Roast the lifelong competition, shared trauma, and who Mom loves more.',
+    tone: 'sibling rivalry. Roast the lifelong competition, shared trauma, and who Mom loves more.',
   },
   roommates: {
     label: 'roommates',
@@ -34,7 +34,7 @@ const RELATIONSHIPS = {
   },
   enemies: {
     label: 'sworn enemies',
-    tone: 'petty warfare. Roast the beef with maximum drama.',
+    tone: 'a long-running rivalry. Roast the beef with lots of drama.',
   },
 };
 

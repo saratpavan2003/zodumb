@@ -307,10 +307,9 @@ export const baseStyles = {
     background: 'linear-gradient(90deg, transparent, #2a2a3e, transparent)',
   },
   horoscope: {
-    fontFamily: 'Cormorant Garamond, serif',
-    fontSize: '1.05rem',
-    fontStyle: 'italic',
-    lineHeight: 1.85,
+    fontFamily: 'Space Grotesk, sans-serif',
+    fontSize: '1rem',
+    lineHeight: 1.7,
     color: '#e8e6f0',
   },
   verdict: {

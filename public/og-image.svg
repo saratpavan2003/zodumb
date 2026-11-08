@@ -34,7 +34,7 @@
   <circle cx="250" cy="400" r="2" fill="#f0b429" opacity="0.2"/>
 
   <!-- Top eyebrow -->
-  <text x="600" y="200" font-family="Georgia, sans-serif" font-size="22" font-weight="500" letter-spacing="12" fill="#7c3aed" text-anchor="middle" opacity="0.9">THE COSMOS ARE JUDGING YOU</text>
+  <text x="600" y="200" font-family="Georgia, sans-serif" font-size="22" font-weight="500" letter-spacing="12" fill="#7c3aed" text-anchor="middle" opacity="0.9">YOUR BIRTHDAY, ROASTED</text>
 
   <!-- Main title -->
   <text x="600" y="360" font-family="Georgia, serif" font-size="180" font-weight="bold" font-style="italic" fill="url(#title-grad)" text-anchor="middle" letter-spacing="-4">ZODUMB</text>
@@ -43,7 +43,7 @@
   <line x1="300" y1="400" x2="900" y2="400" stroke="#2a2a3e" stroke-width="1"/>
 
   <!-- Tagline -->
-  <text x="600" y="450" font-family="Georgia, sans-serif" font-size="28" font-weight="300" fill="#7a7890" text-anchor="middle">Enter your birthday. Receive your fate. Chaos guaranteed.</text>
+  <text x="600" y="450" font-family="Georgia, sans-serif" font-size="28" font-weight="300" fill="#7a7890" text-anchor="middle">Enter your birthday. Get a funny horoscope. Free.</text>
 
   <!-- URL -->
   <text x="600" y="560" font-family="Georgia, sans-serif" font-size="22" fill="#3a3a52" text-anchor="middle" letter-spacing="2">zodumb.com</text>

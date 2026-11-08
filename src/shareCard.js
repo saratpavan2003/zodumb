@@ -155,8 +155,10 @@ function renderSolo(ctx, result) {
   drawDivider(ctx, 780)
 
   ctx.fillStyle = COLORS.text
-  ctx.font = `700 italic 52px ${SERIF}`
-  drawWrapped(ctx, result.horoscope, W / 2, 920, W - PAD * 2, 78)
+  ctx.font = `500 44px ${SANS}`
+  ctx.textAlign = 'left'
+  drawWrapped(ctx, result.horoscope, PAD, 900, W - PAD * 2, 68)
+  ctx.textAlign = 'center'
 }
 
 function renderBeef(ctx, beef) {
@@ -178,12 +180,12 @@ function renderBeef(ctx, beef) {
   // Score label
   ctx.fillStyle = COLORS.text
   ctx.font = `700 italic 44px ${SERIF}`
-  ctx.fillText(beef.scoreLabel, W / 2, 930)
+  ctx.fillText(beef.scoreLabel, W / 2, 965)
 
   // Score bar
   const barW = W - PAD * 2
   const barX = PAD
-  const barY = 985
+  const barY = 1015
   ctx.fillStyle = COLORS.deep
   roundRect(ctx, barX, barY, barW, 18, 9)
   ctx.fill()
@@ -199,14 +201,16 @@ function renderBeef(ctx, beef) {
   // Flags
   ctx.fillStyle = COLORS.muted
   ctx.font = `500 34px ${SANS}`
-  ctx.fillText(`🚩 ${beef.redFlags} red      🟢 ${beef.greenFlags} green`, W / 2, 1090)
+  ctx.fillText(`🚩 ${beef.redFlags} red      🟢 ${beef.greenFlags} green`, W / 2, 1115)
 
-  drawDivider(ctx, 1150)
+  drawDivider(ctx, 1175)
 
   // Reading
   ctx.fillStyle = COLORS.text
-  ctx.font = `700 italic 48px ${SERIF}`
-  const afterReading = drawWrapped(ctx, beef.reading, W / 2, 1270, W - PAD * 2, 70)
+  ctx.font = `500 40px ${SANS}`
+  ctx.textAlign = 'left'
+  const afterReading = drawWrapped(ctx, beef.reading, PAD, 1285, W - PAD * 2, 62)
+  ctx.textAlign = 'center'
 
   // Verdict
   ctx.fillStyle = COLORS.gold
@@ -348,8 +352,7 @@ export async function generateShareImage({ mode, result, beef, sick, money, late
   ctx.textBaseline = 'alphabetic'
 
   drawBackground(ctx)
-  const isExcuse = mode === 'sick' || mode === 'money' || mode === 'late'
-  drawHeader(ctx, isExcuse ? 'MADE WITH ZODUMB' : 'THE COSMOS ARE JUDGING YOU')
+  drawHeader(ctx, 'MADE WITH ZODUMB')
 
   if (mode === 'beef' && beef) renderBeef(ctx, beef)
   else if (mode === 'sick' && sick) renderSick(ctx, sick)
@@ -376,11 +379,11 @@ export async function shareOrDownloadCard({ mode, result, beef, sick, money, lat
   const file = new File([blob], filename, { type: 'image/png' })
 
   const shareText =
-    mode === 'beef' ? 'Our cosmic compatibility 💘'
+    mode === 'beef' ? 'Our zodiac compatibility 💘'
     : mode === 'sick' ? 'My sick-day excuse 🤒'
     : mode === 'money' ? 'Why I can\'t lend you money 💸'
     : mode === 'late' ? 'My running-late excuse ⏰'
-    : 'My unhinged horoscope ✦'
+    : 'My Zodumb horoscope ✦'
 
   if (navigator.canShare && navigator.canShare({ files: [file] })) {
     try {

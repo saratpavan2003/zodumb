@@ -3,13 +3,13 @@ export const config = {
 };
 
 const VIBES = [
-  "savage roast",
-  "absurd and chaotic",
+  "playful roast",
+  "absurd and silly",
   "sarcastic but sweet",
-  "full unhinged chaos",
+  "silly and over-the-top",
   "passive aggressive fortune cookie",
   "conspiracy theorist astrologer",
-  "overly dramatic soap opera",
+  "overly dramatic",
   "disappointed parent energy"
 ];
 
@@ -71,7 +71,7 @@ Rules:
     return new Response(JSON.stringify({ error: data.error?.message || JSON.stringify(data) }), { status: 500 });
   }
 
-  const horoscope = data.candidates?.[0]?.content?.parts?.[0]?.text || 'The stars are currently buffering. Try again.';
+  const horoscope = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Something went wrong reading your sign. Try again.';
 
   return new Response(JSON.stringify({ horoscope, vibe: randomVibe, sign: zodiacSign }), {
     status: 200,
