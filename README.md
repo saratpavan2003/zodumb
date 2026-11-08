@@ -2,7 +2,7 @@
 
 Enter your birthday. Get a funny horoscope. For entertainment only.
 
-Five modes: **Solo Reading** (a birthday horoscope), **Cosmic Beef** (zodiac compatibility for two people), **Call In Sick** (an AI-crafted excuse, at `/sick`), **Why I Can't Lend You Money** (gentle-to-absurd ways to say no to a loan, at `/money`), and **Late to Work Excuse** (an AI-written "running late" message, at `/late`).
+Seven modes: **Solo Reading** (a birthday horoscope), **Cosmic Beef** (zodiac compatibility for two people), **Call In Sick** (an AI-crafted excuse, at `/sick`), **Why I Can't Lend You Money** (gentle-to-absurd ways to say no to a loan, at `/money`), **Late to Work Excuse** (an AI-written "running late" message, at `/late`), **Ask for a Raise** (a raise request email or talking points, at `/raise`), and **Resignation Letter** (a professional or absurd resignation, at `/resign`).
 
 ---
 

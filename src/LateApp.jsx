@@ -263,6 +263,12 @@ export default function LateApp() {
         <a href="/money" style={styles.ctaLink}>
           💸 Someone wants a loan? Try Why I Can't Lend You Money →
         </a>
+        <a href="/raise" style={styles.ctaLink}>
+          📈 Time for more pay? Try the Ask for a Raise Generator →
+        </a>
+        <a href="/resign" style={styles.ctaLink}>
+          👋 Moving on? Try the Resignation Letter Generator →
+        </a>
         <a href="/" style={styles.ctaLink}>
           ✦ Back to Zodumb Horoscopes
         </a>

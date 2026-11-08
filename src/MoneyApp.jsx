@@ -253,6 +253,12 @@ export default function MoneyApp() {
         <a href="/late" style={styles.ctaLink}>
           ⏰ Running late? Try the Late to Work Excuse Generator →
         </a>
+        <a href="/raise" style={styles.ctaLink}>
+          📈 Time for more pay? Try the Ask for a Raise Generator →
+        </a>
+        <a href="/resign" style={styles.ctaLink}>
+          👋 Moving on? Try the Resignation Letter Generator →
+        </a>
         <a href="/" style={styles.ctaLink}>
           ✦ Back to Zodumb Horoscopes
         </a>

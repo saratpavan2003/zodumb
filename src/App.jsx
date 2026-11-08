@@ -301,6 +301,12 @@ export default function App() {
           💸 Someone wants a loan? Say no with style →
         </a>
 
+        <a href="/raise" style={styles.ctaLink}>
+          📈 Time for more pay? Try the Ask for a Raise Generator →
+        </a>
+        <a href="/resign" style={styles.ctaLink}>
+          👋 Moving on? Try the Resignation Letter Generator →
+        </a>
         {/* Footer */}
         <footer style={styles.footer}>
           <p>Made by Zodumb · For entertainment only</p>

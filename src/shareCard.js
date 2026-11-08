@@ -342,7 +342,58 @@ function renderLate(ctx, late) {
   ctx.textAlign = 'center'
 }
 
-export async function generateShareImage({ mode, result, beef, sick, money, late }) {
+// Shared card for config-driven generators (GeneratorApp). Longer messages
+// (e.g. resignation letters) shrink the body font until everything fits.
+function renderGeneric(ctx, g) {
+  ctx.textAlign = 'center'
+
+  ctx.fillStyle = COLORS.gold
+  ctx.font = `700 italic 60px ${SERIF}`
+  drawWrapped(ctx, g.title, W / 2, 600, W - PAD * 2, 72)
+
+  const grad = ctx.createLinearGradient(W * 0.3, 0, W * 0.7, 0)
+  grad.addColorStop(0, COLORS.gold)
+  grad.addColorStop(1, COLORS.purpleGlow)
+  ctx.fillStyle = grad
+  ctx.font = `900 italic 210px ${SERIF}`
+  ctx.fillText(`${g.score}%`, W / 2, 840)
+
+  ctx.fillStyle = COLORS.purpleGlow
+  ctx.font = `500 30px ${SANS}`
+  ctx.fillText(String(g.scoreName || '').toUpperCase(), W / 2, 930)
+
+  ctx.fillStyle = COLORS.text
+  ctx.font = `700 italic 44px ${SERIF}`
+  ctx.fillText(g.scoreLabel, W / 2, 995)
+
+  drawDivider(ctx, 1070)
+
+  // Fit the message (and backup line) above the footer.
+  const maxBottom = H - 190
+  const width = W - PAD * 2
+  let size = 40
+  for (; size > 24; size -= 2) {
+    ctx.font = `500 ${size}px ${SANS}`
+    const msgH = wrapLines(ctx, g.message, width).length * size * 1.55
+    ctx.font = `700 italic ${size}px ${SERIF}`
+    const backH = g.backup ? 60 + wrapLines(ctx, `“${g.backup}”`, width).length * size * 1.4 : 0
+    if (1180 - size + msgH + backH <= maxBottom) break
+  }
+
+  ctx.textAlign = 'left'
+  ctx.fillStyle = COLORS.text
+  ctx.font = `500 ${size}px ${SANS}`
+  const after = drawWrapped(ctx, g.message, PAD, 1180, width, Math.round(size * 1.55))
+
+  if (g.backup) {
+    ctx.fillStyle = COLORS.muted
+    ctx.font = `700 italic ${size}px ${SERIF}`
+    drawWrapped(ctx, `“${g.backup}”`, PAD, after + 60, width, Math.round(size * 1.4))
+  }
+  ctx.textAlign = 'center'
+}
+
+export async function generateShareImage({ mode, result, beef, sick, money, late, generic }) {
   await ensureFonts()
 
   const canvas = document.createElement('canvas')
@@ -358,6 +409,7 @@ export async function generateShareImage({ mode, result, beef, sick, money, late
   else if (mode === 'sick' && sick) renderSick(ctx, sick)
   else if (mode === 'money' && money) renderMoney(ctx, money)
   else if (mode === 'late' && late) renderLate(ctx, late)
+  else if (mode === 'generic' && generic) renderGeneric(ctx, generic)
   else if (mode === 'solo' && result) renderSolo(ctx, result)
 
   drawFooter(ctx)
@@ -365,25 +417,25 @@ export async function generateShareImage({ mode, result, beef, sick, money, late
 }
 
 // Share the card via the native share sheet where possible, else download it.
-export async function shareOrDownloadCard({ mode, result, beef, sick, money, late }) {
-  const canvas = await generateShareImage({ mode, result, beef, sick, money, late })
+export async function shareOrDownloadCard({ mode, result, beef, sick, money, late, generic, filename: customName, shareText: customText }) {
+  const canvas = await generateShareImage({ mode, result, beef, sick, money, late, generic })
   const blob = await new Promise(res => canvas.toBlob(res, 'image/png'))
   if (!blob) throw new Error('Could not render image')
 
-  const filename =
-    mode === 'beef' ? 'zodumb-cosmic-beef.png'
+  const filename = customName ||
+    (mode === 'beef' ? 'zodumb-cosmic-beef.png'
     : mode === 'sick' ? 'zodumb-sick-note.png'
     : mode === 'money' ? 'zodumb-cant-lend-money.png'
     : mode === 'late' ? 'zodumb-late-excuse.png'
-    : 'zodumb-horoscope.png'
+    : 'zodumb-horoscope.png')
   const file = new File([blob], filename, { type: 'image/png' })
 
-  const shareText =
-    mode === 'beef' ? 'Our zodiac compatibility 💘'
+  const shareText = customText ||
+    (mode === 'beef' ? 'Our zodiac compatibility 💘'
     : mode === 'sick' ? 'My sick-day excuse 🤒'
     : mode === 'money' ? 'Why I can\'t lend you money 💸'
     : mode === 'late' ? 'My running-late excuse ⏰'
-    : 'My Zodumb horoscope ✦'
+    : 'My Zodumb horoscope ✦')
 
   if (navigator.canShare && navigator.canShare({ files: [file] })) {
     try {

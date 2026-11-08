@@ -18,11 +18,21 @@
     "api/late.js": {
       "memory": 128,
       "maxDuration": 30
+    },
+    "api/raise.js": {
+      "memory": 128,
+      "maxDuration": 30
+    },
+    "api/resign.js": {
+      "memory": 128,
+      "maxDuration": 30
     }
   },
   "rewrites": [
     { "source": "/sick", "destination": "/sick.html" },
     { "source": "/money", "destination": "/money.html" },
-    { "source": "/late", "destination": "/late.html" }
+    { "source": "/late", "destination": "/late.html" },
+    { "source": "/raise", "destination": "/raise.html" },
+    { "source": "/resign", "destination": "/resign.html" }
   ]
 }
