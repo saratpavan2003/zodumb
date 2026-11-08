@@ -18,7 +18,7 @@ const SICK_VIBES = [
   { id: 'believable', emoji: '✅', label: 'Believable' },
   { id: 'dramatic', emoji: '🎭', label: 'Dramatic' },
   { id: 'vague', emoji: '🌫️', label: 'Vague' },
-  { id: 'unhinged', emoji: '🤪', label: 'Unhinged' },
+  { id: 'unhinged', emoji: '🤪', label: 'Absurd' },
   { id: 'emergency', emoji: '🚨', label: 'Emergency' },
 ]
 
@@ -96,10 +96,10 @@ export default function SickApp() {
 
         {/* Header */}
         <header style={styles.header}>
-          <div style={styles.eyebrow}>THE COSMOS ARE COVERING FOR YOU</div>
+          <div style={styles.eyebrow}>FOR WHEN YOU NEED A DAY OFF</div>
           <div style={styles.title}>ZODUMB</div>
           <h1 style={styles.pageH1}>Call In Sick Excuse Generator</h1>
-          <p style={styles.subtitle}>Pick your excuse. Send with confidence.<br />Believability not guaranteed. Chaos is.</p>
+          <p style={styles.subtitle}>Pick your excuse. Send with confidence.<br />Pick a tone, copy it, send it.</p>
         </header>
 
         {/* Main card */}
@@ -186,8 +186,8 @@ export default function SickApp() {
           {loading && (
             <div style={styles.loading}>
               <div style={styles.orb} />
-              <p style={styles.loadingText}>The cosmos are deliberating…</p>
-              <p style={styles.loadingSubtext}>Forging a note from the cosmos.</p>
+              <p style={styles.loadingText}>Writing your excuse…</p>
+              <p style={styles.loadingSubtext}>Finding a reason that works.</p>
             </div>
           )}
 
@@ -238,7 +238,7 @@ export default function SickApp() {
 
         {/* Footer */}
         <footer style={styles.footer}>
-          <p>Made with questionable cosmic energy · No stars were harmed</p>
+          <p>Made by Zodumb · For entertainment only</p>
         </footer>
 
       </div>

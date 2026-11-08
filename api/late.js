@@ -26,10 +26,10 @@ const LATENESS = {
 // The believability dial.
 const VIBES = {
   believable: { label: 'Believable', tone: 'genuinely plausible and boring. Traffic-level. The kind of excuse nobody questions.' },
-  dramatic: { label: 'Dramatic', tone: 'wildly over-the-top, soap-opera stakes, unnecessary detail.' },
+  dramatic: { label: 'Dramatic', tone: 'over-the-top and dramatic, with unnecessary detail.' },
   vague: { label: 'Vague', tone: 'suspiciously vague. "Something came up." Zero specifics, maximum mystery.' },
-  honest: { label: 'Brutally honest', tone: 'brutally, hilariously honest about the real reason (overslept, snoozed 9 times, could not find a sock).' },
-  unhinged: { label: 'Unhinged', tone: 'completely unhinged. The reason is absurd and escalates the more you read it.' },
+  honest: { label: 'Honest', tone: 'funny and self-aware about the real reason (overslept, hit snooze too many times, could not find a sock).' },
+  unhinged: { label: 'Absurd', tone: 'silly and absurd. The reason gets more ridiculous the more you read it.' },
 };
 
 const CHANNELS = {

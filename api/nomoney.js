@@ -20,8 +20,8 @@ const VIBES = {
   gentle: { label: 'Gentle', tone: 'kind, warm and soft. Lets them down easy and keeps the relationship intact.' },
   honest: { label: 'Honest', tone: 'straightforward and real. A clear, respectful no with no fake excuse.' },
   vague: { label: 'Vague', tone: 'suspiciously vague. "Money is tight right now." Zero specifics, maximum mystery.' },
-  dramatic: { label: 'Dramatic', tone: 'wildly over-the-top financial tragedy, soap-opera stakes, unnecessary detail.' },
-  absurd: { label: 'Absurd', tone: 'completely absurd. The reason is ridiculous and escalates the more you read it.' },
+  dramatic: { label: 'Dramatic', tone: 'an over-the-top money tragedy, dramatic, with unnecessary detail.' },
+  absurd: { label: 'Absurd', tone: 'silly and absurd. The reason gets more ridiculous the more you read it.' },
 };
 
 const CHANNELS = {

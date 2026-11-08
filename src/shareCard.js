@@ -105,12 +105,12 @@ function drawBackground(ctx) {
   ctx.stroke()
 }
 
-function drawHeader(ctx) {
+function drawHeader(ctx, eyebrow) {
   ctx.textAlign = 'center'
 
   ctx.fillStyle = COLORS.purple
   ctx.font = `500 26px ${SANS}`
-  ctx.fillText('T H E   C O S M O S   A R E   J U D G I N G   Y O U', W / 2, 240)
+  ctx.fillText(eyebrow.split('').join(' '), W / 2, 240)
 
   const grad = ctx.createLinearGradient(W * 0.25, 0, W * 0.75, 0)
   grad.addColorStop(0, COLORS.gold)
@@ -348,7 +348,8 @@ export async function generateShareImage({ mode, result, beef, sick, money, late
   ctx.textBaseline = 'alphabetic'
 
   drawBackground(ctx)
-  drawHeader(ctx)
+  const isExcuse = mode === 'sick' || mode === 'money' || mode === 'late'
+  drawHeader(ctx, isExcuse ? 'MADE WITH ZODUMB' : 'THE COSMOS ARE JUDGING YOU')
 
   if (mode === 'beef' && beef) renderBeef(ctx, beef)
   else if (mode === 'sick' && sick) renderSick(ctx, sick)
@@ -376,9 +377,9 @@ export async function shareOrDownloadCard({ mode, result, beef, sick, money, lat
 
   const shareText =
     mode === 'beef' ? 'Our cosmic compatibility 💘'
-    : mode === 'sick' ? 'My cosmically-approved sick note 🤒'
+    : mode === 'sick' ? 'My sick-day excuse 🤒'
     : mode === 'money' ? 'Why I can\'t lend you money 💸'
-    : mode === 'late' ? 'My cosmically-approved late excuse ⏰'
+    : mode === 'late' ? 'My running-late excuse ⏰'
     : 'My unhinged horoscope ✦'
 
   if (navigator.canShare && navigator.canShare({ files: [file] })) {

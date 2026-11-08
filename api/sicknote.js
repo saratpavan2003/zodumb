@@ -14,12 +14,12 @@ const RECIPIENTS = {
   team: { label: 'the group chat', tone: 'a message to the team/group chat. Casual, chaotic, oversharing.' },
 };
 
-// The believability dial — how hard the AI leans into realism vs chaos.
+// The believability dial — how hard the AI leans into realism vs silliness.
 const VIBES = {
   believable: { label: 'Believable', tone: 'genuinely plausible and boring. The kind of excuse nobody questions.' },
-  dramatic: { label: 'Dramatic', tone: 'wildly over-the-top, soap-opera stakes, unnecessary detail.' },
+  dramatic: { label: 'Dramatic', tone: 'over-the-top and dramatic, with unnecessary detail.' },
   vague: { label: 'Vague', tone: 'suspiciously vague. "Not feeling well." Zero specifics, maximum mystery.' },
-  unhinged: { label: 'Unhinged', tone: 'completely unhinged and honest to a fault. Chaotic truth energy.' },
+  unhinged: { label: 'Absurd', tone: 'silly and oversharing, honest to a fault in a funny way.' },
   emergency: { label: 'Emergency', tone: 'a fake "emergency" that escalates absurdly the more you read it.' },
 };
 

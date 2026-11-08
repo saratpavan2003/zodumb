@@ -100,10 +100,10 @@ export default function MoneyApp() {
 
         {/* Header */}
         <header style={styles.header}>
-          <div style={styles.eyebrow}>THE COSMOS SAY YOUR WALLET IS CLOSED</div>
+          <div style={styles.eyebrow}>FOR WHEN SOMEONE ASKS FOR A LOAN</div>
           <div style={styles.title}>ZODUMB</div>
           <h1 style={styles.pageH1}>How to Say No to Lending Money</h1>
-          <p style={styles.subtitle}>Someone wants a loan. You want to say no.<br />From gentle to absurd. Friendship not guaranteed.</p>
+          <p style={styles.subtitle}>Someone wants a loan. You want to say no.<br />From gentle to absurd, ready to send.</p>
         </header>
 
         {/* Main card */}
@@ -207,8 +207,8 @@ export default function MoneyApp() {
           {loading && (
             <div style={styles.loading}>
               <div style={styles.orb} />
-              <p style={styles.loadingText}>The cosmos are checking your balance…</p>
-              <p style={styles.loadingSubtext}>Insufficient funds. Drafting your no.</p>
+              <p style={styles.loadingText}>Writing your no…</p>
+              <p style={styles.loadingSubtext}>Choosing the right words.</p>
             </div>
           )}
 
@@ -259,7 +259,7 @@ export default function MoneyApp() {
 
         {/* Footer */}
         <footer style={styles.footer}>
-          <p>Made with questionable cosmic energy · No wallets were opened</p>
+          <p>Made by Zodumb · For entertainment only</p>
         </footer>
 
       </div>

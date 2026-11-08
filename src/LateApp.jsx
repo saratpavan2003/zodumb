@@ -26,8 +26,8 @@ const LATE_VIBES = [
   { id: 'believable', emoji: '✅', label: 'Believable' },
   { id: 'dramatic', emoji: '🎭', label: 'Dramatic' },
   { id: 'vague', emoji: '🌫️', label: 'Vague' },
-  { id: 'honest', emoji: '😬', label: 'Brutally honest' },
-  { id: 'unhinged', emoji: '🤪', label: 'Unhinged' },
+  { id: 'honest', emoji: '😬', label: 'Honest' },
+  { id: 'unhinged', emoji: '🤪', label: 'Absurd' },
 ]
 
 const CHANNELS = [
@@ -105,10 +105,10 @@ export default function LateApp() {
 
         {/* Header */}
         <header style={styles.header}>
-          <div style={styles.eyebrow}>THE COSMOS ARE RUNNING LATE TOO</div>
+          <div style={styles.eyebrow}>FOR WHEN THE ALARM DIDN'T GO OFF</div>
           <div style={styles.title}>ZODUMB</div>
           <h1 style={styles.pageH1}>Late to Work Excuse Generator</h1>
-          <p style={styles.subtitle}>Running late? Get the text to your boss in one tap.<br />Believability not guaranteed. Chaos is.</p>
+          <p style={styles.subtitle}>Running late? Get the text to your boss in one tap.<br />Pick a tone, copy it, send it.</p>
         </header>
 
         {/* Main card */}
@@ -212,8 +212,8 @@ export default function LateApp() {
           {loading && (
             <div style={styles.loading}>
               <div style={styles.orb} />
-              <p style={styles.loadingText}>The cosmos are stalling for you…</p>
-              <p style={styles.loadingSubtext}>Inventing traffic that never existed.</p>
+              <p style={styles.loadingText}>Writing your excuse…</p>
+              <p style={styles.loadingSubtext}>Finding a reason that works.</p>
             </div>
           )}
 
@@ -269,7 +269,7 @@ export default function LateApp() {
 
         {/* Footer */}
         <footer style={styles.footer}>
-          <p>Made with questionable cosmic energy · No clocks were harmed</p>
+          <p>Made by Zodumb · For entertainment only</p>
         </footer>
 
       </div>
